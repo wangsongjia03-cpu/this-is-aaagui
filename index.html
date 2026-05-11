@@ -674,52 +674,6 @@ section { padding: 6rem 10vw; }
   .modal-images { padding: 1.5rem; }
   .modal-research { padding: 2rem 1.5rem; }
 }
-/* 彻底修复右侧黑边/横向滚动问题 */
-html {
-  overflow-x: hidden !important;  /* 强制隐藏横向滚动 */
-  width: 100% !important;         /* 强制html宽度为100% */
-}
-
-body {
-  overflow-x: hidden !important;  /* 双重保障 */
-  width: 100%;                    /* 确保body不超出视口 */
-  position: relative;             /* 配合overflow生效 */
-}
-
-/* 修复模态框打开时的body样式（避免右侧留白/黑边） */
-body.modal-open {
-  overflow: hidden !important;
-  position: fixed;                /* 固定body，防止滚动 */
-  width: 100%;                    /* 保持宽度100% */
-}
-
-/* 修复.nav元素的宽度（避免导航栏超出） */
-nav {
-  width: 100vw;                   /* 使用视口宽度，而非100% */
-  max-width: 100%;                /* 限制最大宽度 */
-  padding-left: 2rem !important;  /* 调整内边距，避免内容溢出 */
-  padding-right: 2rem !important;
-  box-sizing: border-box !important;
-}
-
-/* 修复hero-bg-text的定位（避免超大文字触发横向滚动） */
-.hero-bg-text {
-  right: -5vw !important;         /* 使用视口单位，适配不同屏幕 */
-  transform: translateX(0);       /* 重置位移 */
-  max-width: none;                /* 取消宽度限制 */
-}
-
-/* 响应式适配：小屏幕下进一步优化 */
-@media (max-width: 768px) {
-  .hero-bg-text {
-    font-size: clamp(6rem, 15vw, 12rem) !important;
-    right: -8vw !important;
-  }
-  nav {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
 </style>
 </head>
 <body>
